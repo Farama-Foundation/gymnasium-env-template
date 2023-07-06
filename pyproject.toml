@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gymnasium-env-template"
+version = "0.0.1"
+dependencies = [
+  "copier",
+  "pyyaml",
+  "gymnasium",
+  "pytest",
+  "toml",
+  "pre-commit",
+]
