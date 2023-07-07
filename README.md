@@ -42,17 +42,19 @@ Answer the questions, and when it's finished you should get a project structure 
 ```
 .
 ├── LICENSE
+├── pyproject.toml
 ├── README.md
-├── environment.yml
-├── .gitlab-ci.yml
-├── .flake8
-├── .gitignore
-├── config/
-├── data/
-├── docs/
-├── notebooks/
-├── src/
-└── tests/
+└── src
+    ├── envs
+    │   ├── grid_world.py
+    │   └── __init__.py
+    ├── __init__.py
+    └── wrappers
+        ├── clip_reward.py
+        ├── discrete_actions.py
+        ├── __init__.py
+        ├── reacher_weighted_reward.py
+        └── relative_position.py
 ```
 
 ## Contributing
@@ -60,6 +62,7 @@ If you would like to contribute, follow these steps:
 - Fork this repository
 - Clone your fork
 - Set up pre-commit via `pre-commit install`
+- Install the packages with `pip install -e .`
 - Check you files manually with `pre-commit run -a`
 
 PRs may require accompanying PRs in [the documentation repo](https://github.com/Farama-Foundation/Gymnasium/tree/main/docs).

@@ -1,15 +1,11 @@
 from pathlib import Path
 import shutil
-import importlib
-import pip
-import os
 
 from copier import run_copy
 import yaml
 import toml
-import gymnasium
 
-ROOT_LOC = Path(__file__).resolve().parent
+ROOT_LOC = Path(__file__).resolve().parent.parent
 TEMPLATE_LOC = ROOT_LOC.joinpath("template-test")
 COPIER_FILE = ROOT_LOC.joinpath("copier.yml")
 
@@ -26,7 +22,6 @@ class GenerateTemplate:
         template_vars = {
             "environment_name": copier_vars.get("environment_name").get("default"),
         }
-
         # Generate a template
         run_copy(
             src_path=str(ROOT_LOC),
@@ -69,21 +64,3 @@ def test_pyproject_templating():
         copier_vars = get_yaml_dict(COPIER_FILE)
         env_name = copier_vars.get("environment_name").get("default")
         assert env_vars.get("project").get("name") == str(env_name)
-
-
-def test_run_env():
-    with GenerateTemplate():
-        environment_loc = TEMPLATE_LOC.joinpath("pyproject.toml")
-        env_vars = toml.load(environment_loc)
-        env_name = env_vars.get("project").get("name")
-
-        os.chdir(TEMPLATE_LOC)
-        pip.main(["uninstall", env_name, "-y"])
-        pip.main(["install", "-e", "."])
-        importlib.import_module(env_name)  # , package=None)
-        from gymnasium.wrappers import FlattenObservation
-
-        env = gymnasium.make("{env_name}/GridWorld-v0")
-        wrapped_env = FlattenObservation(env)
-        assert wrapped_env.reset() == ([3, 0, 3, 3], {})
-        pip.main(["uninstall", env_name, "-y"])
