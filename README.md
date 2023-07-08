@@ -64,6 +64,7 @@ If you would like to contribute, follow these steps:
 - Set up pre-commit via `pre-commit install`
 - Install the packages with `pip install -e .`
 - Check you files manually with `pre-commit run -a`
+- Run the tests with `pytest -v`
 
 PRs may require accompanying PRs in [the documentation repo](https://github.com/Farama-Foundation/Gymnasium/tree/main/docs).
 

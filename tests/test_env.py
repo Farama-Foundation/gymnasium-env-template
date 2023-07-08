@@ -1,9 +1,9 @@
 import importlib
 import pip
 import os
-from test_templating import GenerateTemplate, TEMPLATE_LOC
+from .utils import GenerateTemplate, TEMPLATE_LOC
 
-import toml
+import toml  # type: ignore
 import gymnasium
 
 
