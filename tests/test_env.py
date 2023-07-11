@@ -1,7 +1,7 @@
 import importlib
 import pip
 import os
-from .utils import GenerateTemplate, TEMPLATE_LOC
+from utils import GenerateTemplate, TEMPLATE_LOC
 
 import toml  # type: ignore
 import gymnasium

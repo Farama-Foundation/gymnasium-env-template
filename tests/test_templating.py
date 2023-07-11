@@ -1,7 +1,7 @@
 import toml  # type: ignore
 from pathlib import Path
 
-from .utils import GenerateTemplate, TEMPLATE_LOC, COPIER_FILE, get_yaml_dict
+from utils import GenerateTemplate, TEMPLATE_LOC, COPIER_FILE, get_yaml_dict
 
 
 def test_template_copy():
