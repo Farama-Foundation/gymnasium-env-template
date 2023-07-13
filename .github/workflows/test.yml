@@ -28,7 +28,4 @@ jobs:
           pip install -e .
 
       - name: Run tests
-        run: |
-          pwd
-          ls
-          pytest -v
+        run: pytest -v

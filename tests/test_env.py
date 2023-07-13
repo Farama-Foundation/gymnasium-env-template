@@ -2,6 +2,7 @@ import importlib
 import pip
 import os
 from utils import GenerateTemplate, TEMPLATE_LOC
+import numpy as np
 
 import toml  # type: ignore
 import gymnasium
@@ -19,7 +20,9 @@ def test_run_env():
         importlib.import_module(env_name)  # , package=None)
         from gymnasium.wrappers import FlattenObservation
 
-        env = gymnasium.make("{env_name}/GridWorld-v0")
+        env = gymnasium.make(f"{env_name}/GridWorld-v0")
         wrapped_env = FlattenObservation(env)
-        assert wrapped_env.reset() == ([3, 0, 3, 3], {})
+        out1, out2 = wrapped_env.reset(seed=42)
+        np.testing.assert_array_equal(out1, [0, 3, 3, 2])
+        assert out2 == {"distance": 4.0}
         pip.main(["uninstall", env_name, "-y"])
