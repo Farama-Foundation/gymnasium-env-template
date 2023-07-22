@@ -1,6 +1,6 @@
 import importlib
 
-# import pip
+import pip
 import os
 from utils import GenerateTemplate, TEMPLATE_LOC
 import numpy as np
@@ -19,8 +19,8 @@ def test_run_env():
 
         tmp_path = os.getcwd()
         os.chdir(TEMPLATE_LOC)
-        # pip.main(["uninstall", env_name, "-y"])
-        # pip.main(["install", "-e", "."])
+        pip.main(["uninstall", env_name, "-y"])
+        pip.main(["install", "-e", "."])
         sys.path.append(str(TEMPLATE_LOC))
         importlib.import_module(env_name, package=None)
 
@@ -33,5 +33,5 @@ def test_run_env():
         # Cleanup
         del sys.modules[env_name]
         sys.path.remove(str(TEMPLATE_LOC))
-        # pip.main(["uninstall", env_name, "-y"])
+        pip.main(["uninstall", env_name, "-y"])
         os.chdir(tmp_path)
