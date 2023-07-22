@@ -20,6 +20,7 @@ class GenerateTemplate:
         template_vars = {
             "environment_name": copier_vars.get("environment_name").get("default"),
         }
+
         # Generate a template
         run_copy(
             src_path=str(ROOT_LOC),

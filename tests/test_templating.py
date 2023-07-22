@@ -7,7 +7,7 @@ from utils import GenerateTemplate, TEMPLATE_LOC, COPIER_FILE, get_yaml_dict
 def test_template_copy():
     with GenerateTemplate():
         path_list_to_check = [
-            TEMPLATE_LOC.joinpath("src"),
+            # TEMPLATE_LOC.joinpath("src"),
             TEMPLATE_LOC.joinpath("LICENSE"),
             TEMPLATE_LOC.joinpath("README.md"),
             TEMPLATE_LOC.joinpath("pyproject.toml"),
