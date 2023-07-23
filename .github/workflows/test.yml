@@ -1,0 +1,31 @@
+---
+name: test
+on: [pull_request, push]
+
+permissions:
+  contents: read  # to fetch code (actions/checkout)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          # latest stable version of Python
+          python-version: "3.x"
+
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+
+      - name: Install
+        run: |
+          pip install -U pip
+          pip install -e .
+
+      - name: Run tests
+        run: pytest -v

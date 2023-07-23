@@ -1,0 +1,20 @@
+---
+environment_name:
+  type: str
+  help: The name of your Gymnasium environment
+  default: gymnasium_env
+
+# Subdirectory to use as the template root when generating a project.
+# If not specified, the root of the git repository is used.
+# Can be overridden with the `subdirectory` CLI/API option.
+_subdirectory: "template"
+
+# Commands to execute after generating or updating a project from your template.
+# They run ordered, and with the $STAGE=task variable in their environment.
+# Can be overridden with the `tasks` API option.
+# _tasks:
+  # Strings get executed under system's default shell
+# # gitignore-style patterns files/folders that must not be copied.
+# # Can be overridden with the `exclude` CLI/API option.
+# _exclude:
+#   - ".gitkeep"
