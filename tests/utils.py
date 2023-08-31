@@ -15,10 +15,14 @@ def get_yaml_dict(yaml_file):
 
 
 class GenerateTemplate:
+    def __init__(self, project_license="None"):
+        self.project_license = project_license
+
     def __enter__(self):
         copier_vars = get_yaml_dict(COPIER_FILE)
         template_vars = {
             "environment_name": copier_vars.get("environment_name").get("default"),
+            "project_license": self.project_license,
         }
 
         # Generate a template
@@ -27,6 +31,7 @@ class GenerateTemplate:
             dst_path=str(TEMPLATE_LOC),
             data=template_vars,
             cleanup_on_error=True,
+            # defaults=True,
         )
 
     def __exit__(self, exc_type, exc_value, traceback):

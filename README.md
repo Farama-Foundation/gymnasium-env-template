@@ -34,7 +34,7 @@ copier --version
 Then you can just run the following command and replace the string `path/to/directory` by the path to the directory where you want to create your new project.
 
 ```
-copier https://github.com/Farama-Foundation/gymnasium-env-template.git "path/to/directory"
+copier copy https://github.com/Farama-Foundation/gymnasium-env-template.git "path/to/directory"
 ```
 
 Answer the questions, and when it's finished you should get a project structure 🌳 like the following:
