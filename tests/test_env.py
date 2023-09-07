@@ -30,6 +30,12 @@ def test_run_env():
         np.testing.assert_array_equal(out1, [0, 3, 3, 2])
         assert out2 == {"distance": 4.0}
 
+        wrappers = importlib.import_module(f"{env_name}.wrappers")
+        wrapped_env = wrappers.RelativePosition(env)
+        out1, out2 = wrapped_env.reset(seed=42)
+        np.testing.assert_array_equal(out1, [3, -1])
+        assert out2 == {"distance": 4.0}
+
         # Cleanup
         del sys.modules[env_name]
         sys.path.remove(str(TEMPLATE_LOC))

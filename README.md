@@ -41,20 +41,20 @@ Answer the questions, and when it's finished you should get a project structure 
 
 ```
 .
+├── gymnasium_env
+│   ├── envs
+│   │   ├── grid_world.py
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── wrappers
+│       ├── clip_reward.py
+│       ├── discrete_actions.py
+│       ├── __init__.py
+│       ├── reacher_weighted_reward.py
+│       └── relative_position.py
 ├── LICENSE
 ├── pyproject.toml
-├── README.md
-└── src
-    ├── envs
-    │   ├── grid_world.py
-    │   └── __init__.py
-    ├── __init__.py
-    └── wrappers
-        ├── clip_reward.py
-        ├── discrete_actions.py
-        ├── __init__.py
-        ├── reacher_weighted_reward.py
-        └── relative_position.py
+└── README.md
 ```
 
 ## Contributing
