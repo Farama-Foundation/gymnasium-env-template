@@ -18,3 +18,14 @@ _subdirectory: "template"
 # # Can be overridden with the `exclude` CLI/API option.
 # _exclude:
 #   - ".gitkeep"
+
+project_license:
+  type: str
+  help: The license for your Gymnasium environment
+  choices:
+    - GPL-3.0-or-later
+    - MIT
+    - Apache-2.0
+    - Unlicense
+    - None
+  default: MIT

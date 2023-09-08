@@ -34,27 +34,27 @@ copier --version
 Then you can just run the following command and replace the string `path/to/directory` by the path to the directory where you want to create your new project.
 
 ```
-copier https://github.com/Farama-Foundation/gymnasium-env-template.git "path/to/directory"
+copier copy https://github.com/Farama-Foundation/gymnasium-env-template.git "path/to/directory"
 ```
 
 Answer the questions, and when it's finished you should get a project structure 🌳 like the following:
 
 ```
 .
+├── gymnasium_env
+│   ├── envs
+│   │   ├── grid_world.py
+│   │   └── __init__.py
+│   ├── __init__.py
+│   └── wrappers
+│       ├── clip_reward.py
+│       ├── discrete_actions.py
+│       ├── __init__.py
+│       ├── reacher_weighted_reward.py
+│       └── relative_position.py
 ├── LICENSE
 ├── pyproject.toml
-├── README.md
-└── src
-    ├── envs
-    │   ├── grid_world.py
-    │   └── __init__.py
-    ├── __init__.py
-    └── wrappers
-        ├── clip_reward.py
-        ├── discrete_actions.py
-        ├── __init__.py
-        ├── reacher_weighted_reward.py
-        └── relative_position.py
+└── README.md
 ```
 
 ## Contributing
