@@ -26,6 +26,7 @@ jobs:
         run: |
           pip install -U pip
           pip install -e .
+          pip list
 
       - name: Run tests
         run: pytest -v

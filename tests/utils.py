@@ -31,6 +31,7 @@ class GenerateTemplate:
             dst_path=str(TEMPLATE_LOC),
             data=template_vars,
             cleanup_on_error=True,
+            # vcs_ref="HEAD",
             # defaults=True,
         )
 
