@@ -7,13 +7,12 @@ permissions:
 
 jobs:
   test:
-    os_matrix:
-      strategy:
-        matrix:
-          os:
-            - ubuntu-latest
-            - macos-latest
-            - windows-latest
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
     runs-on: ${{ matrix.os }}
 
     steps:
